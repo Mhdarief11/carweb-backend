@@ -24,7 +24,9 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING,
         get() {
           const image = this.getDataValue('image')
-          return image ? 'http://localhost:8000' + image.substring(1) : null
+          return image
+            ? "https://chapter7-tim5.herokuapp.com/" + image.substring(1)
+            : null;
         },
       },
       rentperday: DataTypes.INTEGER,
